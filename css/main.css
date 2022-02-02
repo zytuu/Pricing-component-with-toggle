@@ -198,7 +198,7 @@ main {
 }
 
 .btn-white {
-  color: var(--clr-grayblue);
+  color: rgba(105, 111, 221, 1);
   background: #fff;
 }
 
