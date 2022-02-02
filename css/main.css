@@ -1,0 +1,255 @@
+/* Load fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+/* CSS reset */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+/* Custom variables */
+:root {
+  --clr-verylightblue: hsl(240, 78%, 98%);
+  --clr-lightblue: hsl(234, 14%, 74%);
+  --clr-grayblue: hsl(233, 13%, 49%);
+  --clr-darkgrayblue: hsl(232, 13%, 33%);
+
+  --gradient-primary: linear-gradient(
+    90deg,
+    rgba(163, 168, 240, 1) 0%,
+    rgba(105, 111, 221, 1) 100%
+  );
+
+  --ff-body: "Montserrat", sans-serif;
+}
+
+/* Typography */
+html {
+  font-size: 15px;
+  font-family: var(--ff-body);
+}
+
+p {
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* Mobile styles */
+body {
+  background-image: url(../images/bg-top.svg), url(../images/bg-bottom.svg);
+  background-color: var(--clr-verylightblue);
+  background-position: top right, left bottom;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  color: var(--clr-darkgrayblue);
+  padding: 2em;
+}
+
+.toggle-container {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  place-content: center;
+  align-items: center;
+  color: var(--clr-grayblue);
+}
+
+.toggle {
+  width: 50px;
+  height: 28px;
+  border-radius: 100vh;
+  position: relative;
+  background: var(--gradient-primary);
+  cursor: pointer;
+  transition: 250ms ease;
+}
+
+.toggle::before {
+  content: "";
+  top: 10%;
+  left: 3px;
+  position: absolute;
+  width: 22px;
+  border-radius: 100vh;
+  height: 22.5px;
+  background: white;
+  z-index: 100;
+  transition: 0.2 ease;
+}
+
+.active::before {
+  left: 1.62em;
+  transition: 0.2s all;
+}
+
+.active {
+  background: rgba(163, 168, 240, 1);
+  transition: 250ms ease;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2rem;
+  margin-inline: 2rem;
+}
+
+.plan {
+  padding: 2em;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--clr-darkgrayblue);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  max-width: 650px;
+}
+
+.plan--blue {
+  background: var(--gradient-primary);
+  color: #fff;
+}
+
+.plan--blue .plan__type p {
+  color: #fff;
+}
+
+.plan-header {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.plan__price h1::first-letter {
+  font-size: 2.5rem;
+  padding-right: 0.2em;
+  vertical-align: middle;
+}
+
+.plan__type {
+  margin-bottom: 1rem;
+}
+
+.plan__type p {
+  font-size: 1.25rem;
+  color: var(--clr-grayblue);
+}
+
+.plan-content {
+  width: 100%;
+}
+
+.plan__benefits {
+  list-style: none;
+}
+
+.plan__benefit {
+  border-top: 1px solid var(--clr-lightblue);
+  padding-block: 1em;
+}
+
+.plan__benefit:last-child {
+  border-bottom: 1px solid var(--clr-lightblue);
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 1em 1.5em;
+  border-radius: 10px;
+  width: 100%;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-blue {
+  color: #fff;
+  background: var(--gradient-primary);
+}
+
+.btn-blue:hover {
+  cursor: pointer;
+  border: 1px solid rgba(105, 111, 221, 1);
+  background: transparent;
+  color: rgba(105, 111, 221, 1);
+  transition: 0.1s ease-in-out all;
+}
+
+.btn-white {
+  color: var(--clr-grayblue);
+  background: #fff;
+}
+
+.btn-white:hover {
+  cursor: pointer;
+  border: 1px solid rgb(255, 255, 255);
+  background: transparent;
+  color: rgb(255, 255, 255);
+  transition: 0.1s ease-in-out all;
+}
+
+footer {
+  margin-block: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bx-heart {
+  color: red;
+  vertical-align: middle;
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 681px) {
+  .plan {
+    min-width: 450px;
+  }
+
+  main {
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (min-width: 1130px) {
+  .plan {
+    min-width: 350px;
+  }
+
+  .plan--blue {
+    transform: scale(1.2);
+  }
+
+  main {
+    margin-top: 5rem;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
